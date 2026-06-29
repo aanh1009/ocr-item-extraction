@@ -48,19 +48,27 @@ flowchart LR
 ### 2 · Clone + install
 
 ```bash
-git clone https://github.com/aanh1009/ocrItemExtraction.git
-cd ocrItemExtraction
+git clone https://github.com/aanh1009/ocr-item-extraction.git
+cd ocr-item-extraction
 npm install       # pulls express, multer, tesseract.js, etc.
 ```
 
 ### 3 · Environment vars
 
-Create **`.env`**:
+Copy the example file and fill in your local values:
+
+```bash
+cp .env.example .env
+```
+
+Required variables:
 
 ```env
 MONGO_URI=mongodb+srv://<user>:<pass>@cluster0.abcde.mongodb.net/ocr?retryWrites=true&w=majority
 SECRET_KEY=super‑secret‑string
 ```
+
+Keep `.env` local. It is intentionally ignored by Git.
 
 ### 4 · Run
 
@@ -103,7 +111,6 @@ Returned JSON shapes are defined in the route handlers.
 
 ## 🛣️ Roadmap
 
-- [ ] Fix typo `moongoose` → `mongoose` in `user.js`.
 - [ ] Add proper authentication (JWT or Clerk) instead of throw‑away username.
 - [ ] Front‑end React demo (drag‑and‑drop, list view).
 - [ ] Better item parsing (regex for currency symbols, totals).
